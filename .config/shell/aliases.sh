@@ -3,7 +3,6 @@ alias ll="exa -lh"
 alias lla="exa -lha"
 alias dns="cat /etc/resolv.conf | grep nameserver"
 alias cat='bat --style grid'
-alias pingsweep='/bin/bash /home/rein/Documents/hulp/scripts/pingSweep.sh'
 alias dust='du -sh * | sort -hr'
 alias ..='cd ..'
 
