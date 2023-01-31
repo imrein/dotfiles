@@ -12,10 +12,11 @@ end
 local packer_bootstrap = ensure_packer()
 
 return require('packer').startup(function(use)
+
   use 'wbthomason/packer.nvim'
   use 'ellisonleao/gruvbox.nvim'
   use 'nvim-lualine/lualine.nvim'
-  use 'nvim-treesitter/nvim-treesitter'
+  use {'windwp/nvim-autopairs', config = function() require("nvim-autopairs").setup {} end}
 
   if packer_bootstrap then
     require('packer').sync()
