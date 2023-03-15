@@ -16,6 +16,8 @@ return require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
   use 'ellisonleao/gruvbox.nvim'
   use 'nvim-lualine/lualine.nvim'
+  use 'nvim-treesitter/nvim-treesitter'
+  use 'rodjek/vim-puppet'
   use {'windwp/nvim-autopairs', config = function() require("nvim-autopairs").setup {} end}
 
   if packer_bootstrap then
