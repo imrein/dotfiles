@@ -11,7 +11,7 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 ## Theme
 
 # p10k
-source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
+source ~/.zsh-theme-powerlevel10k
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 unsetopt beep
