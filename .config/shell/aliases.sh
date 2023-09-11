@@ -1,6 +1,6 @@
 # General
-alias ll="exa -lh"
-alias lla="exa -lha"
+alias ll="eza -lh"
+alias lla="eza -lha"
 alias dns="cat /etc/resolv.conf | grep nameserver"
 alias cat="bat --style grid"
 alias dust="du -sh * | sort -hr"
