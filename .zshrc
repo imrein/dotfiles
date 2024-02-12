@@ -10,8 +10,7 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 
 ## Theme
 
-# p10k
-source ~/.zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+### Starship
+eval "$(starship init zsh)"
 
 unsetopt beep
