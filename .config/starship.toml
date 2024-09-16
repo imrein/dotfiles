@@ -1,0 +1,148 @@
+# General config
+add_newline = false
+
+# Format
+format = """
+$os| \
+$directory\
+$git_branch\
+$git_state\
+$git_metrics\
+$git_status\
+[>](bold white) 
+"""
+
+[os]
+disabled    = false
+format      = " [$symbol]($style)"
+
+# Icons
+[aws]
+symbol = "  "
+
+[c]
+symbol = " "
+
+[directory]
+read_only           = " 󰌾"
+style               = "#d65d0e"
+format              = "[$path ]($style)"
+truncation_length   = 3
+truncation_symbol   = "…/"
+
+[docker_context]
+symbol = " "
+
+[git_branch]
+symbol = " "
+style  = "bold green"
+format = "[$symbol$branch]($style) "
+
+[git_metrics]
+disabled = false
+
+[git_status]
+format = "[$all_status$ahead_behind]($style) "
+
+[golang]
+symbol = " "
+
+[hg_branch]
+symbol = " "
+
+[hostname]
+ssh_symbol = " "
+
+[java]
+symbol = " "
+
+[lua]
+symbol = " "
+
+[memory_usage]
+symbol = "󰍛 "
+
+[nix_shell]
+symbol = " "
+
+[nodejs]
+symbol = " "
+
+[os.symbols]
+Alpaquita = " "
+Alpine = " "
+Amazon = " "
+Android = " "
+Arch = " "
+Artix = " "
+CentOS = " "
+Debian = " "
+DragonFly = " "
+Emscripten = " "
+EndeavourOS = " "
+Fedora = " "
+FreeBSD = " "
+Garuda = "󰛓 "
+Gentoo = " "
+HardenedBSD = "󰞌 "
+Illumos = "󰈸 "
+Linux = " "
+Mabox = " "
+Macos = " "
+Manjaro = " "
+Mariner = " "
+MidnightBSD = " "
+Mint = " "
+NetBSD = " "
+NixOS = " "
+OpenBSD = "󰈺 "
+openSUSE = " "
+OracleLinux = "󰌷 "
+Pop = " "
+Raspbian = " "
+Redhat = " "
+RedHatEnterprise = " "
+Redox = "󰀘 "
+Solus = "󰠳 "
+SUSE = " "
+Ubuntu = " "
+Unknown = " "
+Windows = "󰍲 "
+
+[package]
+symbol = "󰏗 "
+
+[php]
+symbol = " "
+
+[python]
+symbol = " "
+format = 'via [$symbol]($style)'
+
+[ruby]
+symbol = " "
+
+[rust]
+symbol = " "
+
+[swift]
+symbol = " "
+
+[zig]
+symbol = " "
+
+# Colours
+palette = 'gruvbox_dark'
+
+[palettes.gruvbox_dark]
+color_fg0       = '#fbf1c7'
+color_bg1       = '#3c3836'
+color_bg3       = '#665c54'
+color_blue      = '#458588'
+color_aqua      = '#689d6a'
+color_green     = '#98971a'
+color_orange    = '#d65d0e'
+color_purple    = '#b16286'
+color_red       = '#cc241d'
+color_yellow    = '#d79921'
+
