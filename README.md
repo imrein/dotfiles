@@ -6,8 +6,8 @@ Collection of dotfiles I currently use for my day-to-day workflow.
 
 ## Components
 ### Desktop & Window Manager + extra tools
-|     |     |
-| --- | --- |
+| Tool | Description |
+| ---- | ----------- |
 | [sddm](https://github.com/sddm/sddm) | Display-management |
 | [hyprland](https://github.com/hyprwm/Hyprland) | Wayland-based tiling window manager |
 | [hyprlock](https://github.com/mortie/swaylock-effects) | Wayland screen locker |
@@ -18,8 +18,8 @@ Collection of dotfiles I currently use for my day-to-day workflow.
 | [Rofi](https://github.com/davatorium/rofi) | Menu launcher |
 
 ### Terminal + tools
-|     |     |
-| --- | --- |
+| Tool | Description |
+| ---- | ----------- |
 | [ghostty](https://github.com/ghostty-org/ghostty) | Terminal emulator |
 | [ZSH](https://github.com/zsh-users/zsh) | Shell |
 | [ripgrep](https://github.com/BurntSushi/ripgrep) | grep on steroids |
@@ -27,8 +27,8 @@ Collection of dotfiles I currently use for my day-to-day workflow.
 | [tig](https://github.com/jonas/tig) | TUI for git |
 
 ### Font, color, theme,...
-|     |     |
-| --- | --- |
+| Tool | Description |
+| ---- | ----------- |
 | [Firacode Nerd Font](https://github.com/ryanoasis/nerd-fonts) | JetBrains font with glyphs |
 | [Gruvbox](https://github.com/Fausto-Korpsvart/Gruvbox-GTK-Theme) | GTK theme |
 | [Papirus](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme) | Icons |
