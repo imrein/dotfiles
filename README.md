@@ -2,7 +2,7 @@
 ## Overview
 Collection of dotfiles I currently use for my day-to-day workflow.
 
-
+![Screenshot](.github/screenshot_desktop.png)
 
 ## Components
 ### Desktop & Window Manager + extra tools
