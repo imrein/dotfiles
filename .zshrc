@@ -4,15 +4,14 @@ SHELL_DIR=$HOME/.config/shell
 export VISUAL="nvim"
 export KUBE_EDITOR="nvim"
 
+export LC_ALL=C.UTF-8
+
 ## Aliases
 source $SHELL_DIR/aliases.sh
 
 ## Auto-completion
 autoload -U compinit && compinit
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
-
-## Flameshot fix for dual monitors
-export QT_QPA_PLATFORM=xcb
 
 ## Theme
 eval "$(starship init zsh)"
@@ -32,6 +31,8 @@ setopt hist_ignore_all_dups
 setopt hist_save_no_dups
 setopt hist_ignore_dups
 setopt hist_find_no_dups
+
+bindkey -e
 
 # p10k
 # source ~/.zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
