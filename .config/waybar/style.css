@@ -1,0 +1,218 @@
+/* Gruvbox Dark Colors */
+@define-color background #282828;
+@define-color background-light #3c3836;
+@define-color foreground #ebdbb2;
+@define-color black #32302f;
+@define-color red #cc241d;
+@define-color green #98971a;
+@define-color yellow #d79921;
+@define-color blue #458588;
+@define-color magenta #b16286;
+@define-color cyan #689d6a;
+@define-color white #ebdbb2;
+@define-color orange #d65d0e;
+@define-color gray #3c3836;
+
+/* Module-specific colors */
+@define-color workspaces-color @foreground;
+@define-color workspaces-focused-bg @green;
+@define-color workspaces-focused-fg @cyan;
+@define-color workspaces-urgent-bg @red;
+@define-color workspaces-urgent-fg @red;
+
+/* Text and border colors for modules */
+@define-color mode-color @orange;
+@define-color mpd-color @magenta;
+@define-color weather-color @magenta;
+@define-color playerctl-color @magenta;
+@define-color clock-color @white;
+@define-color cpu-color @green;
+@define-color memory-color @magenta;
+@define-color temperature-color @yellow;
+@define-color temperature-critical-color @red;
+@define-color battery-color @cyan;
+@define-color battery-charging-color @green;
+@define-color battery-warning-color @yellow;
+@define-color battery-critical-color @red;
+@define-color network-color @white;
+@define-color network-disconnected-color @red;
+@define-color pulseaudio-color @white;
+@define-color pulseaudio-muted-color @red;
+@define-color backlight-color @yellow;
+@define-color disk-color @cyan;
+@define-color uptime-color @green;
+@define-color updates-color @orange;
+@define-color quote-color @green;
+@define-color idle-inhibitor-color @foreground;
+@define-color idle-inhibitor-active-color @red;
+
+* {
+    /* Base styling for all modules */
+    border: none;
+    border-radius: 0;
+    font-family: "FiraCode Nerd Font";
+    font-size: 15px;
+    font-weight: normal;
+    min-height: 0;
+}
+
+window#waybar {
+    background-color: @background;
+    color: @foreground;
+}
+
+/* Common module styling */
+#mode, #mpd, #custom-vpn, #clock, #cpu,
+#memory, #temperature, #battery, #network, #pulseaudio,
+#backlight, #bluetooth, #disk, #custom-notification, #custom-spacer, #custom-power, #tray {
+    padding: 0 10px;
+    /*padding: 0 8px; - laptop*/
+    margin: 0;
+    min-width: 12px;
+    background-color: transparent;
+}
+
+/* Workspaces styling */
+#workspaces label {
+    font-size: 13px;
+}
+#workspaces button {
+    background-color: transparent;
+    color: @workspaces-color;
+    margin: 0 2px;
+    padding: 0 5px;
+    /*padding: 0 3px; - laptop*/
+}
+
+#workspaces button.empty {
+    color: @background-light;
+}
+
+#workspaces button.active {
+    min-width: 0;
+    color: @green;
+}
+
+#workspaces button.focused {
+    box-shadow: inset 0 -2px @workspaces-focused-fg;
+    color: @yellow;
+}
+
+#workspaces button.urgent {
+    background-color: transparent;
+    color: @workspaces-urgent-fg;
+    animation: flash 1.5s infinite;
+}
+
+#workspaces button:hover {
+    color: @yellow;
+    background: none;
+    box-shadow: inherit;
+    text-shadow: inherit;
+}
+
+@keyframes flash {
+    0% {
+        color: @white;
+    }
+    50% {
+        color: @orange;
+    }
+    100% {
+        color: @white;
+    }
+}
+
+/* Module-specific styling */
+#mode {
+    color: @mode-color;
+}
+
+#clock {
+    color: @clock-color;
+    background-color: @background-light;
+    margin-left: 5px;
+}
+
+#battery {
+    color: @battery-color;
+}
+
+#battery.charging, #battery.plugged {
+    color: @battery-charging-color;
+}
+
+#battery.warning:not(.charging) {
+    color: @battery-warning-color;
+}
+
+#battery.critical:not(.charging) {
+    color: @battery-critical-color;
+}
+
+#network {
+    color: @network-color;
+}
+
+#network.disconnected {
+    color: @network-disconnected-color;
+}
+
+#pulseaudio {
+    color: @pulseaudio-color;
+}
+
+#pulseaudio.muted {
+    color: @pulseaudio-muted-color;
+}
+
+#backlight {
+    color: @backlight-color;
+}
+
+#bluetooth {
+
+}
+
+#tray {
+    padding: 0 8px;
+}
+
+#tray > .passive {
+    -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+    -gtk-icon-effect: highlight;
+    color: @red;
+}
+
+#custom-power {
+    color: @red;
+    margin: 0 5px 0 0;
+}
+
+#custom-distro-icon {
+    color: @blue;
+    font-size: 18px;
+    padding: 3px 5px;
+    margin: 0 5px 0 10px;
+}
+
+#custom-spacer {
+    color: @background-light;
+    font-size: 7px;
+    padding: 0 2px;
+}
+
+#custom-vpn {
+    color: @cyan;
+}
+
+#custom-notification {
+
+}
+
+#custom-notification.notification {
+    color: @orange;
+}

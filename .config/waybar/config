@@ -1,0 +1,192 @@
+{
+  "layer": "top",
+  "position": "top",
+  "height": 24,
+  "spacing": 5,
+  //"output": ["eDP-1"], # laptop
+  "output": ["DP-1"],
+
+  "modules-left": [
+    "custom/distro-icon",
+    "custom/spacer",
+    "hyprland/workspaces",
+  ],
+
+  "modules-center": [
+  ],
+
+  "modules-right": [
+    "tray",
+    "custom/spacer",
+    "pulseaudio",
+    "bluetooth",
+    "custom/vpn",
+    "custom/notification",
+    "battery",
+    "network",
+    "clock",
+    "custom/power"
+  ],
+
+  "hyprland/workspaces": {
+    "format": "{icon}",
+    "persistent-workspaces": {
+      "*": 5,
+    },
+    "format-icons": {
+      "active": "",
+      "default": "",
+      "empty": ""
+    },
+  },
+
+  "pulseaudio": {
+    "scroll-step": 1,
+    "format": "{icon}",
+    "format-muted": "",
+    "format-source": "",
+    "format-source-muted": "",
+    "format-icons": {
+      "Headphone": "",
+      "hands-free": "",
+      "headset": "",
+      "phone": "",
+      "portable": "",
+      "car": "",
+      "default": [
+        "",
+        "",
+        ""
+      ],
+    },
+    "states": {
+      "warning": 100,
+    },
+    "on-click": "pamixer -t",
+    "on-click-right": "pavucontrol",
+    "tooltip": true,
+    "tooltip-format": "{volume}%",
+  },
+
+  "clock": {
+    "interval": 1,
+    "format": "{:%H:%M | %a %d/%m}",
+    "format-alt": "{:%d-%m-%Y}",
+    "tooltip": true,
+    "tooltip-format": "<tt>{calendar}</tt>",
+  },
+
+  "memory": {
+    "interval": 1,
+    "format": "﬙ {percentage}%",
+    "states": {
+      "warning": 85,
+    },
+  },
+
+  "cpu": {
+    "interval": 1,
+    "format": " {usage}%",
+  },
+
+  "network": {
+    "format-wifi": "",
+    "format-ethernet":"󰖟",
+    "format-disconnected": "󰪎",
+    "tooltip-format-disconnected": "Error",
+    "tooltip-format-wifi": "{essid} ({signalStrength}%) ",
+    "tooltip-format-ethernet": "{ifname} 🖧 ",
+    "on-click": "/bin/nmtui"
+  },
+
+  "bluetooth": {
+    "format": "󰂯",
+    "format-on": "󰂯",
+    "format-off": "BT-off",
+    "format-disabled": "󰂲",
+    "format-connected-battery": "{device_battery_percentage}% 󰂯",
+    "format-alt": "󰂯 {status}",
+    "tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
+    "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
+    "tooltip-format-enumerate-connected": "{device_alias}\n{device_address}",
+    "tooltip-format-enumerate-connected-battery": "{device_alias}\n{device_address}\n{device_battery_percentage}%",
+    "on-click-right": "blueman-manager",
+  },
+
+  "temperature": {
+    "tooltip": false,
+    "format": " {temperatureC}°C",
+  },
+
+  "tray": {
+    "icon-size": 15,
+    "spacing": 12,
+  },
+
+  "battery": {
+    "interval": 30,
+    "states": {
+	"good": 95,
+	"warning": 30,
+	"critical": 20
+    },
+    "format": "{capacity}% {icon}",
+    "format-charging": "{capacity}% 󰂄",
+    "format-plugged": "{capacity}% 󰂄 ",
+    "format-alt": "{time} {icon}",
+    "format-icons": [
+	"󰁻",
+    "󰁼",
+    "󰁾",
+    "󰂀",
+    "󰂂",
+    "󰁹"
+    ],
+  },
+
+  "custom/vpn": {
+    "format": " VPN",
+    "exec": "echo '{\"class\": \"connected\"}'",
+    "exec-if": "test -d /proc/sys/net/ipv4/conf/tun0",
+    "return-type": "json",
+    "interval": 1
+  },
+
+  "custom/distro-icon": {
+    "format": "󰣇",
+    "on-click": "rofi -show drun -show-icons",
+    "tooltip": false,
+  },
+
+  "custom/spacer": {
+    "format": "",
+  },
+
+  "custom/notification": {
+    "tooltip": false,
+    "format": "{icon}",
+    "format-icons": {
+      "notification": "󰂟",
+      "none": "󰂜",
+      "dnd-notification": "󰺁",
+      "dnd-none": "",
+      "inhibited-notification": "󰂟",
+      "inhibited-none": "",
+      "dnd-inhibited-notification": "󰺁",
+      "dnd-inhibited-none": ""
+    },
+    "return-type": "json",
+    "exec-if": "which swaync-client",
+    "exec": "swaync-client -swb",
+    "on-click": "swaync-client -t -sw",
+    "on-click-right": "swaync-client -d -sw",
+    "escape": true
+  },
+
+  "custom/power": {
+    "format": "",
+    "on-click": "hyprctl dispatch exit",
+    "interval": 86400, // once every day
+    "tooltip": false
+  }
+}
