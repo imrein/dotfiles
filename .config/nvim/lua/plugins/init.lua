@@ -13,6 +13,8 @@ return {
     end,
   },
 
+  { "rodjek/vim-puppet" },
+
   -- test new blink
   -- { import = "nvchad.blink.lazyspec" },
 
